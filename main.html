@@ -8,10 +8,16 @@
 <body ng-app="mainApp" ng-controller="mainCtrl">
     
     <div>
-        <button ng-click="press()">press</button>
+        <button ng-click="press()">single string</button>
     </div>
-    <div>
-        <fieldset ng-repeat="x in test_array">{{x}}</fieldset>
+
+    <div ng-repeat="x in raw_array">
+            <!-- {{name}} -->
+            <input ng-model="x">                         
+    </div>
+
+    <div ng-repeat="x in raw_array">
+        <!-- <input ng-model={{x}}> -->
     </div>
 
 </body>
