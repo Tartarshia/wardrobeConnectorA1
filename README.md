@@ -1,7 +1,7 @@
 # wardrobeConnectorA1
 parent repo: https://github.com/Tartarshia/lovenikki  
 Task  
-translate JS array into field for cozy input --> display in multiple fields 
+translate JS array into field for cozy input --> display in multiple fields  
 trans data in field back to JS array for wardrobe.js  
 add IO  
 UI  
