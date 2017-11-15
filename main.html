@@ -7,8 +7,11 @@
     <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="script/materialize.min.js"></script>
 
-    <!-- load other libs -->
+    <!-- load other modules -->
     <script type='text/javascript' charset="UTF-8" src='script/angular.js'></script>
+
+    <!-- load local libs -->
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
     <script type='text/javascript' charset="UTF-8" src='script/main.js'></script>
     
 </head>
@@ -21,6 +24,20 @@
     <div ng-repeat="x in raw_array">
         <input ng-model="x">                         
     </div>
+
+    
+    <div class="row">
+        <div class="col s6">
+            <h5>JS Array</h5>
+            <textarea class="textfield">{{raw_array}}</textarea>
+        </div>
+        <div class="col s6">
+            <h5>Joined String</h5>
+            <textarea class="textfield col s6">{{csvContent}}</textarea>
+        </div>
+        
+    </div>
+
 
 </body>
 </html>

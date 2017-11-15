@@ -16,15 +16,15 @@ mainApp.controller('mainCtrl', ['$scope', function($scope) {
         
             var csvContent = "";
 
-console.info(raw_array);
 $scope.raw_array = raw_array;
+
         $scope.press = function() {
             raw_array.forEach(function(infoArray, index){
                 dataString = infoArray.join(",");
-                console.log(dataString);
                 csvContent += dataString+ "\n";
             });
             console.log(csvContent);
+            $scope.csvContent = csvContent;
         };
     }]);
 
