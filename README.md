@@ -1,9 +1,8 @@
 # wardrobeConnectorA1
 parent repo: https://github.com/Tartarshia/lovenikki  
-TODO  
-translate JS array into field for cozy input  
-decommission excel side work  
-trans field data back to JS array  
+Task  
+translate JS array into field for cozy input --> display in multiple fields 
+trans data in field back to JS array for wardrobe.js  
 add IO  
 UI  
 
