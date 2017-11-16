@@ -16,42 +16,27 @@
     
 </head>
 <body ng-app="mainApp" ng-controller="mainCtrl">
-    
-    <div>
-        <button ng-click="press()">single string</button>
-    </div>
 
-    <!-- <div ng-repeat="(name, catagory, id, hearts, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm, extra, source, set, version) in raw_array">
-        <input ng-model="x.name">                         
-    </div> -->
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
-            </tr>
-        </thead>
+    <!-- header -->
+    <ul id="saveSet" class="dropdown-content">
+        <li><a ng-click="press(1)">save as json</a></li>
+        <li><a ng-click="press(2)">save as standard json</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">unused</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">#</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a ng-click="press(0)">Translate</a></li>
+            <li><a>unused</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button" data-activates="saveSet">Choose Save Method</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <tbody>
-            <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            </tr>
-            <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            </tr>
-            <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            </tr>
-        </tbody>
-    </table>
-    
+    <!-- text area -->
     <div class="row">
         <div class="col s6">
             <h5>JS Array</h5>
@@ -59,10 +44,26 @@
         </div>
         <div class="col s6">
             <h5>Joined String</h5>
-            <textarea class="textfield col s6">{{csvContent}}</textarea>
+            <textarea class="textfield col s6">{{display_array}}</textarea>
         </div>
         
     </div>
+
+    <!-- table -->
+    <table class="bordered">
+        <thead>
+            <tr>
+                <th ng-repeat="th in title">{{th}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="th in raw_array">
+                <td ng-repeat="td in th track by $index">{{td}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
 
 
 </body>
