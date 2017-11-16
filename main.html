@@ -19,19 +19,17 @@
 
     <!-- header -->
     <ul id="saveSet" class="dropdown-content">
-        <li><a ng-click="press(1)">save as json</a></li>
-        <li><a ng-click="press(2)">save as standard json</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">unused</a></li>
+        <li><a ng-click="outputSet(true)">minified json</a></li>
+        <li><a ng-click="outputSet(false)">standard json</a></li>
     </ul>
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo right">#</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a ng-click="press(0)">Translate</a></li>
-            <li><a>unused</a></li>
+            <li><a ng-click="inputSet(true)">Read</a></li>
+            <li><a ng-click="inputSet(false)">Translate</a></li>
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" data-activates="saveSet">Choose Save Method</a></li>
+            <li><a class="dropdown-button" data-activates="saveSet">Save As JSON</a></li>
             </ul>
         </div>
     </nav>
@@ -39,12 +37,12 @@
     <!-- text area -->
     <div class="row">
         <div class="col s6">
-            <h5>JS Array</h5>
-            <textarea class="textfield">{{raw_array}}</textarea>
+            <h5>Raw Array</h5>
+            <textarea class=" materialize-textarea" ng-model="input_array">{{display_array}}</textarea>
         </div>
         <div class="col s6">
-            <h5>Joined String</h5>
-            <textarea class="textfield col s6">{{display_array}}</textarea>
+            <h5>Compiled Array</h5>
+            <textarea class="textfield" ng-model="display_array"></textarea>
         </div>
         
     </div>
