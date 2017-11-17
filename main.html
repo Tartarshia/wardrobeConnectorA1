@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-
+    <title>Wardrobe Connector</title>
     <!-- load UI libs -->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
@@ -27,7 +27,7 @@
             <a class="brand-logo">wardrobeConnectorA2</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a ng-click="inputSet(true)">Add to Array</a></li>
-                <li class="active"><a ng-click="inputSet(false)">Translate</a></li>
+                <li class="active"><a href="http://db.lovenikki.world">Qucik Check</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-button" data-activates="saveSet">Save As JSON</a></li>
             </ul>
@@ -35,7 +35,7 @@
     </nav>
 
 
-    <div class="row">
+    <div class="row section1">
         <form name ="manualInput"  class="col s12">
             <div class="row">
 
@@ -105,14 +105,14 @@
                 </div>
 
                 <div class="input-field col s3">
-                    <select ng-model="input_array.Field4" ng-required="true">
+                    <select ng-model="input_array.Field4" ng-required="true" class="hearts">
                         <option value="" disabled selected>hearts count</option>
-                        <option value="6">6</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1">1</option>
+                        <option value="6">6❤❤❤❤❤❤</option>
+                        <option value="5">5❤❤❤❤❤</option>
+                        <option value="4">4❤❤❤❤</option>
+                        <option value="3">3❤❤❤</option>
+                        <option value="2">2❤❤</option>
+                        <option value="1">1❤</option>
                     </select>
                     <label >hearts<span>*</span></label>
                 </div>
