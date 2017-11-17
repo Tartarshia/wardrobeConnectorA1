@@ -2,7 +2,8 @@ var mainApp = angular.module('mainApp', []);
 
 mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
 
-
+        var cache_array;
+        
         function saveText(text, filename) {
             var a = document.createElement('a');
             a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
@@ -46,13 +47,15 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
                 $('select').material_select();
             });
 
-            $scope.raw_array = [
+            $scope.raw_array = [//sample data
                 ['Momo Stalking','Accessory-Foreground','3146','5','S','','','SS','','SS','A','','S','','','Recharge','','V1.5.1-US'],
                 ['Halloween Bats','Accessory-Tattoo','3147','5','A','','','A','SS','','SS','','S','','','Recharge','','V1.5.1-US']
             ];
-            var cache_array = $scope.raw_array;
+            $scope.input_array = {
+                Field1: '',Field2: '',Field3: '',Field4: '',Field5: '',Field6: '',Field7: '',Field8: '',Field9: '',Field10: '',Field11: '',Field12: '',Field13: '',Field14: '',Field15: '',Field16: '',Field17: '',Field18: ''
+            };
+            cache_array = $scope.raw_array;
             $scope.display_array = $scope.raw_array;
-            // console.log(cache_array);
     
             $scope.title = ["name","catagory","id","hearts","gorgeous","simple","elegant","active","mature","cute","sexy","pure","cool","warm","tag","source","set","version"];
             // $http({
@@ -64,9 +67,7 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
     
             // });
 
-            $scope.input_array = {
-                Field1: '',Field2: '',Field3: '',Field4: '',Field5: '',Field6: '',Field7: '',Field8: '',Field9: '',Field10: '',Field11: '',Field12: '',Field13: '',Field14: '',Field15: '',Field16: '',Field17: '',Field18: ''
-            };
+
         }
 
         init();
