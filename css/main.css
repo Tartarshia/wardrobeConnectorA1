@@ -1,0 +1,43 @@
+.Simple {
+	background-color:#cedce7;
+	color:#6e818f;
+}
+.Lively {
+	background-color:#fae782;
+	color:#dc6f39;
+}
+.Cute {
+	background-color:#f9e3e0;
+	color:#ec6f7b;
+}
+.Sexy {
+	background-color:#aaa1cc;
+	color:#f0eafa;
+}
+.Cool {
+	background-color:#d0eef9;
+	color:#679bb1;
+}
+.Gorgeous {
+	background-color:#ecb163;
+	color:#faf4da;
+}
+.Elegance {
+	background-color:#e8e5fe;
+	color:#9a8eac;
+}
+.Mature {
+	background-color:#fe7777;
+	color:#f8d8d9;
+}
+.Pure {
+	background-color:#def3d5;
+	color:#489b85;
+}
+.Warm {
+	background-color:#fed7b5;
+	color:#f17743;
+}
+label span {
+	color: rgb(207, 26, 26);
+}

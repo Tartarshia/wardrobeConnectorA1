@@ -11,8 +11,17 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
         }
 
         $scope.inputSet = function(action) {
+            if($scope.manualInput.$invalid) {
+                return;
+            }
             if(action) { // read from array
-
+                var alignarray = [];
+                $scope.input_array.Field15 = $scope.input_array.Field15.toString();
+                Object.keys($scope.input_array).forEach(function(key) {
+                    console.log(key + $scope.input_array[key])
+                    alignarray.push($scope.input_array[key]);
+                 });
+                $scope.display_array.push(alignarray);
             } else {
 
             }
@@ -38,8 +47,8 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             });
 
             $scope.raw_array = [
-                ['成玦','Accessory-Earrings','500','3','','A','A','','S','','','A','A','','中式古典','浪·缥缈','','V1.3.6'],
-                ['夕月','Accessory-Headwear·Hair ornaments','501','4','S','','A','','SS','','B','','A','','中式古典','浪·缥缈','','V1.3.6'],
+                ['Momo Stalking','Accessory-Foreground','3146','5','S','','','SS','','SS','A','','S','','','Recharge','','V1.5.1-US'],
+                ['Halloween Bats','Accessory-Tattoo','3147','5','A','','','A','SS','','SS','','S','','','Recharge','','V1.5.1-US']
             ];
             var cache_array = $scope.raw_array;
             $scope.display_array = $scope.raw_array;
@@ -54,6 +63,10 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             // }, function errorCallback(response) {
     
             // });
+
+            $scope.input_array = {
+                Field1: '',Field2: '',Field3: '',Field4: '',Field5: '',Field6: '',Field7: '',Field8: '',Field9: '',Field10: '',Field11: '',Field12: '',Field13: '',Field14: '',Field15: '',Field16: '',Field17: '',Field18: ''
+            };
         }
 
         init();
