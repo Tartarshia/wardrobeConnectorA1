@@ -22,299 +22,268 @@
         <li><a ng-click="outputSet(true)">minified json</a></li>
         <li><a ng-click="outputSet(false)">standard json</a></li>
     </ul>
-    <nav>
+    <nav class="nav-extended">
         <div class="nav-wrapper">
             <a class="brand-logo">wardrobeConnectorA2</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            <ul id="nav-mobile" class="right">
                 <li><a ng-click="inputSet(true)">Add to Array</a></li>
                 <li class="active"><a href="http://db.lovenikki.world">Qucik Check</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-button" data-activates="saveSet">Save As JSON</a></li>
             </ul>
         </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#inputMode">Input Mode</a></li>
+                <li class="tab"><a href="#queryMode">Query Mode</a></li>
+                <li class="tab disabled"><a href="#test3">N/A</a></li>
+            </ul>
+        </div>
     </nav>
 
-
-    <div class="row section1">
-        <form name ="manualInput"  class="col s12">
-            <div class="row">
-
-                <div class="input-field col s3">
-                    <input type="text" class="validate" ng-model="input_array.Field1" ng-required="true" validate>
-                    <label >name<span>*</span></label>
-                </div>
-
-                <div class="input-field col s3">
-                    <select ng-model="input_array.Field2" ng-required="true" validate>
-                        <option value="" disabled selected>Choose catagory</option>
-                        <option value="Hair">hair</option>
-                        <option value="Dress">dress</option>
-                        <option value="Coat">coat</option>
-                        <option value="Top">top</option>
-                        <option value="Bottom">bottom</option>
-                        <optgroup label="hosiery">
-                            <option value="Hosiery-Socks">socks</option>
-                            <option value="Hosiery-Cover">anklet</option>
-                        </optgroup>
-                        <option value="Shoes">shoes</option>
-                        <optgroup label="accessory">
-                            <optgroup label="headwear">
-                                <option value="Accessory-Hair ornaments">hair ornaments</option>
-                                <option value="Accessory-Veil">veil</option>
-                                <option value="Accessory-Hairpin">hairpin</option>
-                                <option value="Accessory-Ear">ear</option>
+    <div id="inputMode" class="col s12">
+        
+        <div class="row section1">
+            <form name ="manualInput"  class="col s12">
+                <div class="row">
+    
+                    <div class="input-field col s3">
+                        <input type="text" class="validate" ng-model="input_array.Field1" ng-required="true" validate>
+                        <label >name<span>*</span></label>
+                    </div>
+    
+                    <div class="input-field col s3">
+                        <select ng-model="input_array.Field2" ng-required="true" validate>
+                            <option value="" disabled selected>Choose catagory</option>
+                            <option value="Hair">hair</option>
+                            <option value="Dress">dress</option>
+                            <option value="Coat">coat</option>
+                            <option value="Top">top</option>
+                            <option value="Bottom">bottom</option>
+                            <optgroup label="hosiery">
+                                <option value="Hosiery-Socks">socks</option>
+                                <option value="Hosiery-Cover">anklet</option>
                             </optgroup>
-                            <option value="Accessory-Earrings">earrings</option>
-                            <optgroup label="necklace">
-                                <option value="Accessory-Scarf">scarf</option>
-                                <option value="Accessory-Necklace">necklace</option>
+                            <option value="Shoes">shoes</option>
+                            <optgroup label="accessory">
+                                <optgroup label="headwear">
+                                    <option value="Accessory-Hair ornaments">hair ornaments</option>
+                                    <option value="Accessory-Veil">veil</option>
+                                    <option value="Accessory-Hairpin">hairpin</option>
+                                    <option value="Accessory-Ear">ear</option>
+                                </optgroup>
+                                <option value="Accessory-Earrings">earrings</option>
+                                <optgroup label="necklace">
+                                    <option value="Accessory-Scarf">scarf</option>
+                                    <option value="Accessory-Necklace">necklace</option>
+                                </optgroup>
+                                <optgroup label="bracelet">
+                                    <option value="Accessory-Bracelet·Right">right</option>
+                                    <option value="Accessory-Bracelet·Left">left</option>
+                                    <option value="Accessory-Bracelet·Glove">glove</option>
+                                </optgroup>
+                                <optgroup label="handheld">
+                                    <option value="Accessory-Handheld·Right">right</option>
+                                    <option value="Accessory-Handheld·Left">left</option>
+                                    <option value="Accessory-Handheld·Both">both</option>
+                                </optgroup>
+                                <option value="Accessory-Waist">waist</option>
+                                <optgroup label="special">
+                                    <option value="Accessory-Face">face</option>
+                                    <option value="Accessory-Brooch">brooch</option>
+                                    <option value="Accessory-Tattoo">tattoo</option>
+                                    <option value="Accessory-Wing">wing</option>
+                                    <option value="Accessory-Tail">tail</option>
+                                    <option value="Accessory-Foreground">foreground</option>
+                                    <option value="Accessory-Background">background</option>
+                                    <option value="Accessory-Special·Head ornaments">head ornaments</option>
+                                    <option value="Accessory-Ground">ground</option>
+                                    <option value="Accessory-Skin">skin</option>    
+                                </optgroup>
                             </optgroup>
-                            <optgroup label="bracelet">
-                                <option value="Accessory-Bracelet·Right">right</option>
-                                <option value="Accessory-Bracelet·Left">left</option>
-                                <option value="Accessory-Bracelet·Glove">glove</option>
-                            </optgroup>
-                            <optgroup label="handheld">
-                                <option value="Accessory-Handheld·Right">right</option>
-                                <option value="Accessory-Handheld·Left">left</option>
-                                <option value="Accessory-Handheld·Both">both</option>
-                            </optgroup>
-                            <option value="Accessory-Waist">waist</option>
-                            <optgroup label="special">
-                                <option value="Accessory-Face">face</option>
-                                <option value="Accessory-Brooch">brooch</option>
-                                <option value="Accessory-Tattoo">tattoo</option>
-                                <option value="Accessory-Wing">wing</option>
-                                <option value="Accessory-Tail">tail</option>
-                                <option value="Accessory-Foreground">foreground</option>
-                                <option value="Accessory-Background">background</option>
-                                <option value="Accessory-Special·Head ornaments">head ornaments</option>
-                                <option value="Accessory-Ground">ground</option>
-                                <option value="Accessory-Skin">skin</option>    
-                            </optgroup>
-                        </optgroup>
-                        <option value="Makeup">makeup</option>
-                        <option value="萤光之灵">萤光之灵</option>
-                    </select>
-                    <label >catagory<span>*</span></label>
+                            <option value="Makeup">makeup</option>
+                            <option value="萤光之灵">萤光之灵</option>
+                        </select>
+                        <label >catagory<span>*</span></label>
+                    </div>
+    
+                    <div class="input-field col s3">
+                        <input type="text" class="validate" ng-model="input_array.Field3" ng-required="true" ng-pattern="/^[0-9]*$/" validate >
+                        <label >id<span>*</span></label>
+                    </div>
+    
+                    <div class="input-field col s3">
+                        <select ng-model="input_array.Field4" ng-required="true" class="hearts">
+                            <option value="" disabled selected>hearts count</option>
+                            <option value="6">6❤❤❤❤❤❤</option>
+                            <option value="5">5❤❤❤❤❤</option>
+                            <option value="4">4❤❤❤❤</option>
+                            <option value="3">3❤❤❤</option>
+                            <option value="2">2❤❤</option>
+                            <option value="1">1❤</option>
+                        </select>
+                        <label >hearts<span>*</span></label>
+                    </div>
                 </div>
-
-                <div class="input-field col s3">
-                    <input type="text" class="validate" ng-model="input_array.Field3" ng-required="true" ng-pattern="/^[0-9]*$/" validate >
-                    <label >id<span>*</span></label>
+                <div class="row">
+                    <div class="input-field col s1">
+                        <input disabled  type="text" class="validate">
+                        <label ></label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field5" class="Gorgeous">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >gorgeous</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field6" class="Simple">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >simple</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field7" class="Elegance">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label>elegance</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field8" class="Lively">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >lively</label>
+                    </div>
+                    <div class="input-field col s1">
+                         <select ng-model="input_array.Field9" class="Mature">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >mature</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field10" class="Cute">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >cute</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field11" class="Sexy">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >sexy</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field12" class="Pure">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >pure</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field13" class="Cool">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >cool</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <select ng-model="input_array.Field14" class="Warm">
+                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                        </select>
+                        <label >warm</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <input disabled type="text" class="validate">
+                        <label ></label>
+                    </div>
                 </div>
-
-                <div class="input-field col s3">
-                    <select ng-model="input_array.Field4" ng-required="true" class="hearts">
-                        <option value="" disabled selected>hearts count</option>
-                        <option value="6">6❤❤❤❤❤❤</option>
-                        <option value="5">5❤❤❤❤❤</option>
-                        <option value="4">4❤❤❤❤</option>
-                        <option value="3">3❤❤❤</option>
-                        <option value="2">2❤❤</option>
-                        <option value="1">1❤</option>
-                    </select>
-                    <label >hearts<span>*</span></label>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <select multiple ng-model="input_array.Field15">
+                            <option value="" disabled selected>No tag selected</option>
+                            <option value="Sun Care">Sun Care防晒</option>
+                            <option value="Dancer">Dancer舞者</option>
+                            <option value="Floral">Floral碎花</option>
+                            <option value="Winter">Winter冬装</option>
+                            <option value="Britain">Britain英伦</option>
+                            <option value="Swimsuit">Swimsuit泳装</option>
+                            <option value="Shower">Shower沐浴</option>
+                            <option value="Kimono">Kimono和风</option>
+                            <option value="Pajamas">Pajamas睡衣</option>
+                            <option value="Wedding">Wedding婚纱</option>
+                            <option value="Army">Army军装</option>
+                            <option value="Office">OfficeOL</option>
+                            <option value="Apron">Apron围裙</option>
+                            <option value="Cheongsam">Cheongsam旗袍</option>
+                            <option value="Maiden">Maiden女仆装</option>
+                            <option value="Evening Gown">Evening Gown晚礼服</option>
+                            <option value="Navy">Navy海军风</option>
+                            <option value="Traditional">Traditional民族风</option>
+                            <option value="Bunny">Bunny兔女郎</option>
+                            <option value="Lady">Lady大小姐</option>
+                            <option value="Lolita">Lolita洛丽塔</option>
+                            <option value="Gothic">Gothic哥特风</option>
+                            <option value="Sports">Sports运动系</option>
+                            <option value="Harajuku">Harajuku原宿系</option>
+                            <option value="Preppy">Preppy学院系</option>
+                            <option value="Unisex">Unisex中性风</option>
+                            <option value="Future">Future未来系</option>
+                            <option value="Fairy">Fairy童话系</option>
+                            <option value="Rock">Rock摇滚风</option>
+                            <option value="Denim">Denim牛仔布</option>
+                            <option value="Pet">Pet小动物</option>
+                            <option value="Goddess">Goddess女神系</option>
+                            <option value="pop">pop</option>
+                            <option value="Homewear">Homewear居家服</option>
+                            <option value="Chinese Classical">中式古典</option>
+                            <option value="Hindu">Hindu印度服饰</option>
+                            <option value="Republic of China">Republic of China民国服饰</option>
+                            <option value="European">European欧式古典</option>
+                            <option value="Swordsman">Swordsman侠客联盟</option>
+                            <option value="Rain">Rain雨季装备</option>
+                            <option value="Modern China">Modern China中式现代</option>
+                            <option value="Dryad">Dryad森女系列</option>
+                            <option value="Bohemia">Bohemia波西米亚</option>
+                            <option value="Paramedics">Paramedics医务使者</option>
+                        </select>
+                        <label >tag</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" class="validate" ng-model="input_array.Field16">
+                        <label >source</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" class="validate" ng-model="input_array.Field17">
+                        <label >set</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" class="validate" ng-model="input_array.Field18">
+                        <label >version</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s1">
-                    <input disabled  type="text" class="validate">
-                    <label ></label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field5" class="Gorgeous">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >gorgeous</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field6" class="Simple">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >simple</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field7" class="Elegance">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label>elegance</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field8" class="Lively">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >lively</label>
-                </div>
-                <div class="input-field col s1">
-                     <select ng-model="input_array.Field9" class="Mature">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >mature</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field10" class="Cute">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >cute</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field11" class="Sexy">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >sexy</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field12" class="Pure">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >pure</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field13" class="Cool">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >cool</label>
-                </div>
-                <div class="input-field col s1">
-                    <select ng-model="input_array.Field14" class="Warm">
-                        <option value="" selected></option>
-                        <option value="SS">SS</option>
-                        <option value="S">S</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                    </select>
-                    <label >warm</label>
-                </div>
-                <div class="input-field col s1">
-                    <input disabled type="text" class="validate">
-                    <label ></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s3">
-                    <select multiple ng-model="input_array.Field15">
-                        <option value="" disabled selected>No tag selected</option>
-                        <option value="Sun Care">Sun Care防晒</option>
-                        <option value="Dancer">Dancer舞者</option>
-                        <option value="Floral">Floral碎花</option>
-                        <option value="Winter">Winter冬装</option>
-                        <option value="Britain">Britain英伦</option>
-                        <option value="Swimsuit">Swimsuit泳装</option>
-                        <option value="Shower">Shower沐浴</option>
-                        <option value="Kimono">Kimono和风</option>
-                        <option value="Pajamas">Pajamas睡衣</option>
-                        <option value="Wedding">Wedding婚纱</option>
-                        <option value="Army">Army军装</option>
-                        <option value="Office">OfficeOL</option>
-                        <option value="Apron">Apron围裙</option>
-                        <option value="Cheongsam">Cheongsam旗袍</option>
-                        <option value="Maiden">Maiden女仆装</option>
-                        <option value="Evening Gown">Evening Gown晚礼服</option>
-                        <option value="Navy">Navy海军风</option>
-                        <option value="Traditional">Traditional民族风</option>
-                        <option value="Bunny">Bunny兔女郎</option>
-                        <option value="Lady">Lady大小姐</option>
-                        <option value="Lolita">Lolita洛丽塔</option>
-                        <option value="Gothic">Gothic哥特风</option>
-                        <option value="Sports">Sports运动系</option>
-                        <option value="Harajuku">Harajuku原宿系</option>
-                        <option value="Preppy">Preppy学院系</option>
-                        <option value="Unisex">Unisex中性风</option>
-                        <option value="Future">Future未来系</option>
-                        <option value="Fairy">Fairy童话系</option>
-                        <option value="Rock">Rock摇滚风</option>
-                        <option value="Denim">Denim牛仔布</option>
-                        <option value="Pet">Pet小动物</option>
-                        <option value="Goddess">Goddess女神系</option>
-                        <option value="pop">pop</option>
-                        <option value="Homewear">Homewear居家服</option>
-                        <option value="Chinese Classical">中式古典</option>
-                        <option value="Hindu">Hindu印度服饰</option>
-                        <option value="Republic of China">Republic of China民国服饰</option>
-                        <option value="European">European欧式古典</option>
-                        <option value="Swordsman">Swordsman侠客联盟</option>
-                        <option value="Rain">Rain雨季装备</option>
-                        <option value="Modern China">Modern China中式现代</option>
-                        <option value="Dryad">Dryad森女系列</option>
-                        <option value="Bohemia">Bohemia波西米亚</option>
-                        <option value="Paramedics">Paramedics医务使者</option>
-                        
-
-                    </select>
-                    <label >tag</label>
-                </div>
-                <div class="input-field col s3">
-                    <input type="text" class="validate" ng-model="input_array.Field16">
-                    <label >source</label>
-                </div>
-                <div class="input-field col s3">
-                    <input type="text" class="validate" ng-model="input_array.Field17">
-                    <label >set</label>
-                </div>
-                <div class="input-field col s3">
-                    <input type="text" class="validate" ng-model="input_array.Field18">
-                    <label >version</label>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+    
+        <!-- text area -->
+        <div class="row">
+            <h5>Raw Array</h5>
+            <textarea class=" materialize-textarea">{{display_array}}</textarea>
+        </div>
+    
+        <!-- table -->
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th ng-repeat="th in title">{{th}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="th in raw_array">
+                    <td ng-repeat="td in th track by $index">{{td}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <!-- text area -->
-    <div class="row">
-        <h5>Raw Array</h5>
-        <textarea class=" materialize-textarea">{{display_array}}</textarea>
-    </div>
-
-    <!-- table -->
-    <table class="bordered">
-        <thead>
-            <tr>
-                <th ng-repeat="th in title">{{th}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="th in raw_array">
-                <td ng-repeat="td in th track by $index">{{td}}</td>
-            </tr>
-        </tbody>
-    </table>
     
 
 

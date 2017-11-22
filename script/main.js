@@ -54,6 +54,12 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             $scope.input_array = {
                 Field1: '',Field2: '',Field3: '',Field4: '',Field5: '',Field6: '',Field7: '',Field8: '',Field9: '',Field10: '',Field11: '',Field12: '',Field13: '',Field14: '',Field15: '',Field16: '',Field17: '',Field18: ''
             };
+            $scope.rankList = [
+                {value: 'SS', name: 'SS'},
+                {value: 'S', name: 'S'},
+                {value: 'A', name: 'A'},
+                {value: 'B', name: 'B'}
+              ]
             cache_array = $scope.raw_array;
             $scope.display_array = $scope.raw_array;
     
@@ -66,8 +72,6 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             // }, function errorCallback(response) {
     
             // });
-
-
         }
 
         init();
