@@ -206,50 +206,7 @@
                     <div class="input-field col s3">
                         <select multiple ng-model="input_array.Field15">
                             <option value="" disabled selected>No tag selected</option>
-                            <option value="Sun Care">Sun Care防晒</option>
-                            <option value="Dancer">Dancer舞者</option>
-                            <option value="Floral">Floral碎花</option>
-                            <option value="Winter">Winter冬装</option>
-                            <option value="Britain">Britain英伦</option>
-                            <option value="Swimsuit">Swimsuit泳装</option>
-                            <option value="Shower">Shower沐浴</option>
-                            <option value="Kimono">Kimono和风</option>
-                            <option value="Pajamas">Pajamas睡衣</option>
-                            <option value="Wedding">Wedding婚纱</option>
-                            <option value="Army">Army军装</option>
-                            <option value="Office">OfficeOL</option>
-                            <option value="Apron">Apron围裙</option>
-                            <option value="Cheongsam">Cheongsam旗袍</option>
-                            <option value="Maiden">Maiden女仆装</option>
-                            <option value="Evening Gown">Evening Gown晚礼服</option>
-                            <option value="Navy">Navy海军风</option>
-                            <option value="Traditional">Traditional民族风</option>
-                            <option value="Bunny">Bunny兔女郎</option>
-                            <option value="Lady">Lady大小姐</option>
-                            <option value="Lolita">Lolita洛丽塔</option>
-                            <option value="Gothic">Gothic哥特风</option>
-                            <option value="Sports">Sports运动系</option>
-                            <option value="Harajuku">Harajuku原宿系</option>
-                            <option value="Preppy">Preppy学院系</option>
-                            <option value="Unisex">Unisex中性风</option>
-                            <option value="Future">Future未来系</option>
-                            <option value="Fairy">Fairy童话系</option>
-                            <option value="Rock">Rock摇滚风</option>
-                            <option value="Denim">Denim牛仔布</option>
-                            <option value="Pet">Pet小动物</option>
-                            <option value="Goddess">Goddess女神系</option>
-                            <option value="pop">pop</option>
-                            <option value="Homewear">Homewear居家服</option>
-                            <option value="Chinese Classical">中式古典</option>
-                            <option value="Hindu">Hindu印度服饰</option>
-                            <option value="Republic of China">Republic of China民国服饰</option>
-                            <option value="European">European欧式古典</option>
-                            <option value="Swordsman">Swordsman侠客联盟</option>
-                            <option value="Rain">Rain雨季装备</option>
-                            <option value="Modern China">Modern China中式现代</option>
-                            <option value="Dryad">Dryad森女系列</option>
-                            <option value="Bohemia">Bohemia波西米亚</option>
-                            <option value="Paramedics">Paramedics医务使者</option>
+                            <option ng-repeat="option in tagList" value="{{option.value}}">{{option.name}}</option>
                         </select>
                         <label >tag</label>
                     </div>
