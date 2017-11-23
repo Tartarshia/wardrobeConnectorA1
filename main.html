@@ -28,7 +28,7 @@
 
             <ul id="nav-mobile" class="right">
                 <li><a ng-click="inputSet(true)">Add to Array</a></li>
-                <li class="active"><a href="http://db.lovenikki.world">Qucik Check</a></li>
+                <li><a ng-click="quickCheck()">Qucik Check</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-button" data-activates="saveSet">Save As JSON</a></li>
             </ul>
@@ -247,7 +247,8 @@
                     <td>{{item.Cool}}</td>
                     <td>{{item.Warm}}</td>
                     <td>{{item.Tag}}</td>
-                    <!-- <td>{{item.Cute}}</td> -->
+                    <td>{{}}</td>
+                    <td>{{item.Set}}</td>
                 </tr>
             </tbody>
         </table>

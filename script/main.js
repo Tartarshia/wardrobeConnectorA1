@@ -58,9 +58,18 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             $scope.input_array.Field12 = item.Pure ? item.Pure : '';
             $scope.input_array.Field13 = item.Cool ? item.Cool : '';
             $scope.input_array.Field14 = item.Warm ? item.Warm : '';
-            $scope.input_array.Field15 = item.Tag.replace(/\s*,\s*/g, ","); // remove space after comma
-            console.log(item.Tag);
+            $scope.input_array.Field15 = item.Tag ? item.Tag.replace(/\s*,\s*/g, ",") : ''; // remove space after comma
+            $scope.input_array.Field17 = item.Set ? item.Set : '';
         };
+
+        $scope.quickCheck = function() {
+            var link="http://db.lovenikki.world/search.html?find=xxxxx";
+            var keyWord = $scope.input_array.Field1.trim();
+            keyWord = keyWord.replace(/\s+/g, '+');
+            link = link.replace('xxxxx', keyWord);
+            window.open(link);
+            
+        }
 
         function init() {
             
