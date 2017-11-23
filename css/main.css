@@ -54,3 +54,10 @@ label span {
 .section1 {
 	padding-top: 20px;
 }
+.adjustButton1 {
+	margin-top: 20px;
+    margin-left: 20px;
+}
+tbody {
+	border-bottom: skyblue solid 2px;
+}

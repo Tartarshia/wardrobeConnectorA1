@@ -36,7 +36,7 @@
         <div class="nav-content">
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a href="#inputMode">Input Mode</a></li>
-                <li class="tab"><a href="#queryMode">Query Mode</a></li>
+                <li class="tab disabled"><a href="#queryMode">Query Mode</a></li>
                 <li class="tab disabled"><a href="#test3">N/A</a></li>
             </ul>
         </div>
@@ -127,79 +127,65 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s1">
-                        <input disabled  type="text" class="validate">
-                        <label ></label>
-                    </div>
-                    <!-- <div class="input-field col s1" ng-repeat="attribute in attributeList">
-                        <select ng-model="" class="{{attribute}}">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
-                        </select>
-                        <label >{{attribute}}</label>
-                    </div> -->
-                    <div class="input-field col s1">
+                    <div class="input-field col s1 offset-s1">
                         <select ng-model="input_array.Field5" class="Gorgeous">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >gorgeous</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field6" class="Simple">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >simple</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field7" class="Elegance">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label>elegance</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field8" class="Lively">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >lively</label>
                     </div>
                     <div class="input-field col s1">
                          <select ng-model="input_array.Field9" class="Mature">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >mature</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field10" class="Cute">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >cute</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field11" class="Sexy">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >sexy</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field12" class="Pure">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >pure</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field13" class="Cool">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >cool</label>
                     </div>
                     <div class="input-field col s1">
                         <select ng-model="input_array.Field14" class="Warm">
-                            <option ng-repeat="option in rankList" value="{{option.value}}">{{option.name}}</option>
+                            <option ng-repeat="option in rankList" value="{{option}}">{{option}}</option>
                         </select>
                         <label >warm</label>
-                    </div>
-                    <div class="input-field col s1">
-                        <input disabled type="text" class="validate">
-                        <label ></label>
                     </div>
                 </div>
                 <div class="row">
@@ -244,12 +230,28 @@
                     <td ng-repeat="td in th track by $index">{{td}}</td>
                 </tr>
             </tbody>
+            <tbody>
+                <tr ng-repeat="item in database | filter:input_array.Field1| limitTo:10" ng-click="kimeda(item)">
+                    <td>{{item.Title}}</td>
+                    <td>{{item.Type}}{{item.Supertype}}{{item.Subtype}}</td>
+                    <td>{{item.ItemID}}</td>
+                    <td>{{item.Rarity}}</td>
+                    <td>{{item.Gorgeous}}</td>
+                    <td>{{item.Simple}}</td>
+                    <td>{{item.Elegant}}</td>
+                    <td>{{item.Active}}</td>
+                    <td>{{item.Mature}}</td>
+                    <td>{{item.Cute}}</td>
+                    <td>{{item.Sexy}}</td>
+                    <td>{{item.Pure}}</td>
+                    <td>{{item.Cool}}</td>
+                    <td>{{item.Warm}}</td>
+                    <td>{{item.Tag}}</td>
+                    <!-- <td>{{item.Cute}}</td> -->
+                </tr>
+            </tbody>
         </table>
     </div>
-
-    
-
-
 
 </body>
 </html>

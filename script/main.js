@@ -27,6 +27,7 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
 
             }
         };
+
         $scope.outputSet = function(action) {
             if(action) {
                 var minifyJSON = Object.setPrototypeOf(cache_array, Object.prototype);
@@ -41,26 +42,47 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
             }
 
         };
+
+        $scope.kimeda = function(item) {
+            // console.log(item);
+            $scope.input_array.Field1 = item.Title;
+            $scope.input_array.Field3 = item.ItemID;
+            $scope.input_array.Field4 = item.Rarity;
+            $scope.input_array.Field5 = item.Gorgeous ? item.Gorgeous : '';
+            $scope.input_array.Field6 = item.Simple ? item.Simple : '';
+            $scope.input_array.Field7 = item.Elegance ? item.Elegance : '';
+            $scope.input_array.Field8 = item.Lively ? item.Lively : '';
+            $scope.input_array.Field9 = item.Mature ? item.Mature : '';
+            $scope.input_array.Field10 = item.Cute ? item.Cute : '';
+            $scope.input_array.Field11 = item.Sexy ? item.Sexy : '';
+            $scope.input_array.Field12 = item.Pure ? item.Pure : '';
+            $scope.input_array.Field13 = item.Cool ? item.Cool : '';
+            $scope.input_array.Field14 = item.Warm ? item.Warm : '';
+            $scope.input_array.Field15 = item.Tag.replace(/\s*,\s*/g, ","); // remove space after comma
+            console.log(item.Tag);
+        };
+
         function init() {
             
             $(document).ready(function() {
                 $('select').material_select();
-            });
+            }); // mandatory part Materialize
 
             $scope.raw_array = [//sample data
                 ['Momo Stalking','Accessory-Foreground','3146','5','S','','','SS','','SS','A','','S','','','Recharge','','V1.5.1-US'],
                 ['Halloween Bats','Accessory-Tattoo','3147','5','A','','','A','SS','','SS','','S','','','Recharge','','V1.5.1-US']
             ];
+
             $scope.input_array = {
                 Field1: '',Field2: '',Field3: '',Field4: '',Field5: '',Field6: '',Field7: '',Field8: '',Field9: '',Field10: '',Field11: '',Field12: '',Field13: '',Field14: '',Field15: '',Field16: '',Field17: '',Field18: ''
             };
+
             // $scope.attributeList = ['Gorgeous','Simple','Elegance','Lively','Mature','Cute','Sexy','Pure','Cool','Warm'];
+
             $scope.rankList = [
-                {value: 'SS', name: 'SS'},
-                {value: 'S', name: 'S'},
-                {value: 'A', name: 'A'},
-                {value: 'B', name: 'B'}
-              ];
+                'SS','S','A','B'
+            ];
+
             $scope.tagList = [
                 {value: 'Sun Care', name: 'Sun Care防晒'},
                 {value: 'Dancer', name: 'Dancer舞者'},
@@ -108,18 +130,21 @@ mainApp.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
                 {value: 'Paramedics', name: 'Paramedics医务使者'}
             ];
 
+           $scope.category = ['Hair','Dress','Top','Bottom','Coat','Hosiery-Cover','Hosiery-Socks','Shoes','Makeup','萤光之灵','Accessory-Hair ornaments','Accessory-Veil','Accessory-Hairpin','Accessory-Ear','Accessory-Earrings','Accessory-Scarf','Accessory-Necklace','Accessory-Bracelet·Right','Accessory-Bracelet·Left','Accessory-Bracelet·Glove','Accessory-Handheld·Right','Accessory-Handheld·Left','Accessory-Handheld·Both','Accessory-Waist','Accessory-Face','Accessory-Brooch','Accessory-Tattoo','Accessory-Wing','Accessory-Tail','Accessory-Foreground','Accessory-Background','Accessory-Special·Head ornaments','Accessory-Ground','Accessory-Skin'];
+
             cache_array = $scope.raw_array;
             $scope.display_array = $scope.raw_array;
     
             $scope.title = ["name","catagory","id","hearts","gorgeous","simple","elegant","active","mature","cute","sexy","pure","cool","warm","tag","source","set","version"];
-            // $http({
-            //     method: 'GET',
-            //     url: '/assets/wardrobe.json'
-            // }).then(function successCallback(response) {
-            //     $scope.title = data;
-            // }, function errorCallback(response) {
-    
-            // });
+
+            $http({
+                method: 'GET',
+                url: 'http://db.lovenikki.world/json/WardrobeInfo.json'
+            }).then(function successCallback(response) {
+                $scope.database = response.data;
+            }, function errorCallback(response) {
+                // can't access to API
+            });
         }
 
         init();
